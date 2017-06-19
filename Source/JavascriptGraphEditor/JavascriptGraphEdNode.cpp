@@ -55,6 +55,7 @@ FText UJavascriptGraphEdNode::GetDescription() const
 	return FText();
 }
 
+#if 1
 FJavascriptEdGraphPin UJavascriptGraphEdNode::CreatePin(
 	EEdGraphPinDirection Dir,
 	const FString& PinCategory,
@@ -68,8 +69,32 @@ FJavascriptEdGraphPin UJavascriptGraphEdNode::CreatePin(
 	)
 {
 	return FJavascriptEdGraphPin{
+#ifdef UE_4_17_OR_LATER
+		EPinContainerType ContainerType = bIsArray ? EPinContainerType::Array : EPinContainerType::None;
+	    Super::CreatePin(Dir, PinCategory, PinSubCategory, PinSubCategoryObject, PinName, ContainerType, bIsReference, bIsConst, INDEX_NONE)
+#else
 		Super::CreatePin(Dir, PinCategory, PinSubCategory, PinSubCategoryObject, bIsArray, bIsReference, PinName, bIsConst, INDEX_NONE)
+#endif
 	};
 }
+
+#else
+FJavascriptEdGraphPin UJavascriptGraphEdNode::CreatePin(
+	EEdGraphPinDirection Dir, 
+	const FString& PinCategory, 
+	const FString& PinSubCategory, 
+	UObject* PinSubCategoryObject, 
+	const FString& PinName, 
+	EPinContainerType PinContainerType, 
+	bool bIsReference,
+	bool bIsConst
+	/*int32 Index /*= INDEX_NONE*/
+    )
+{
+	return FJavascriptEdGraphPin{
+		Super::CreatePin(Dir, PinCategory, PinSubCategory, PinSubCategoryObject, PinName, PinContainerType, bIsReference, bIsConst, INDEX_NONE)
+	};
+}
+#endif
 
 #undef LOCTEXT_NAMESPACE

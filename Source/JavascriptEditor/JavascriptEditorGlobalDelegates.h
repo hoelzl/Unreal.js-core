@@ -19,7 +19,7 @@ struct FJavascriptTagAndValue
 	FString Value;
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptAssetData
 {
 	GENERATED_BODY()

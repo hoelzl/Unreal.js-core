@@ -7,7 +7,7 @@
 #include "JavascriptEdModeLibrary.generated.h"
 
 // Extended axis enum for more specialized usage
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptEditorModeTools
 {
 	GENERATED_BODY()
@@ -27,7 +27,7 @@ struct FJavascriptEditorModeTools
 	}
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptEditorMode
 {
 	GENERATED_BODY()
@@ -49,7 +49,7 @@ struct FJavascriptEditorMode
 };
 
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptEdViewport
 {
 	GENERATED_BODY()

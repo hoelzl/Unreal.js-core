@@ -6,7 +6,7 @@
 
 class UJavascriptContext;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptColumn
 {
 	GENERATED_BODY()

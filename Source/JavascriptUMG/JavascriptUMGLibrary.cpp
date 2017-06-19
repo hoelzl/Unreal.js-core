@@ -109,7 +109,9 @@ FVector2D UJavascriptUMGLibrary::ComputeDesiredSize(UWidget* Widget, float Layou
 	auto CompoundWidget = StaticCastSharedPtr<SCompoundWidget>(SlateWidget);
 	if (CompoundWidget.IsValid())
 	{
-		return CompoundWidget->ComputeDesiredSize(LayoutScaleMultiplier);
+		// return CompoundWidget->ComputeDesiredSize(LayoutScaleMultiplier);
+		// This is probably wrong but the comment for ComputeDesiredSize seems to indicate that you can't rely on the value anyway...
+		return CompoundWidget->GetDesiredSize();
 	}
 	return FVector2D(0, 0);
 }

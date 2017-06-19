@@ -5,6 +5,8 @@
 
 struct TypingGeneratorBase
 {
+	virtual ~TypingGeneratorBase() {}
+
 	TSet<UObject*> visited;
 	bool no_tooltip{ false };
 
@@ -214,6 +216,8 @@ struct TypingGenerator : TypingGeneratorBase
 	TypingGenerator(FJavascriptIsolate& InEnvironment)
 	: Environment(InEnvironment)
 	{}
+
+	virtual ~TypingGenerator() {}
 
 	FJavascriptIsolate& Environment;
 

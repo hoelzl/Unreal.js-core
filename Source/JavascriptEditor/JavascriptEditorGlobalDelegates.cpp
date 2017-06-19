@@ -81,7 +81,7 @@ OP_REFLECT_SUPPORT(CleanseEditor)\
 OP_REFLECT_SUPPORT(WorldChange)
 
 FJavascriptAssetData::FJavascriptAssetData(const FAssetData& Source)
-	: ObjectPath(Source.ObjectPath), PackageName(Source.PackageName), PackagePath(Source.PackagePath), GroupNames(Source.GroupNames), AssetName(Source.AssetName), AssetClass(Source.AssetClass), ChunkIDs(Source.ChunkIDs), PackageFlags((int32)Source.PackageFlags), SourceAssetData(Source)
+	: ObjectPath(Source.ObjectPath), PackageName(Source.PackageName), PackagePath(Source.PackagePath), AssetName(Source.AssetName), AssetClass(Source.AssetClass), ChunkIDs(Source.ChunkIDs), PackageFlags((int32)Source.PackageFlags), SourceAssetData(Source)
 {
 }
 

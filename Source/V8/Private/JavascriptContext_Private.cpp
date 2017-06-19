@@ -116,7 +116,7 @@ static void SetFunctionFlags(UFunction* Function, const TArray<FString>& Flags)
 		{
 			if (Left.Compare(Keyword.Keyword, ESearchCase::IgnoreCase) == 0)
 			{
-				Function->FunctionFlags |= Keyword.Flags;
+				Function->FunctionFlags |= static_cast<EFunctionFlags>(Keyword.Flags);
 				bHasMatch = true;
 				break;
 			}
@@ -164,13 +164,13 @@ static void SetClassFlags(UClass* Class, const TArray<FString>& Flags)
 		{
 			if (Left.Compare(Keyword.Keyword, ESearchCase::IgnoreCase) == 0)
 			{
-				Class->ClassFlags |= Keyword.Flags;
+				Class->ClassFlags |= static_cast<EClassFlags>(Keyword.Flags);
 				bHasMatch = true;
 				break;
 			}
 			else if (Left.StartsWith(TEXT("Not")) && Left.Mid(3).Compare(Keyword.Keyword, ESearchCase::IgnoreCase) == 0)
 			{
-				Class->ClassFlags &= ~Keyword.Flags;
+				Class->ClassFlags &= static_cast<EClassFlags>(~Keyword.Flags);
 				bHasMatch = true;
 				break;
 			}
@@ -1889,7 +1889,7 @@ public:
 						FString ParameterWithValue = Parameter;
 						if (!MetadataCppDefaultValue.IsEmpty())
 						{
-							const uint32 ExportFlags = PPF_Localized;
+							const uint32 ExportFlags = PPF_None; // PPF_Localized no longer exists and according to the comments for ImportText localized export/import is not supported?
 							auto Buffer = It->ContainerPtrToValuePtr<uint8>(Parms);
 							const TCHAR* Result = It->ImportText(*MetadataCppDefaultValue, Buffer, ExportFlags, NULL);
 							if (Result)

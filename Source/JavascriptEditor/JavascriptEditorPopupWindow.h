@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Widget.h"
 #include "JavascriptEditorPopupWindow.generated.h"
 
 /**

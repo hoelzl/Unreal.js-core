@@ -6,7 +6,7 @@
 
 struct FJavascriptAutomatedTestImpl;
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptAutomatedTestInstance
 {
 	GENERATED_BODY()
@@ -28,7 +28,7 @@ public:
 	FJavascriptAutomatedTestInstance Tester;
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptAutomatedTest
 {
 	GENERATED_BODY()

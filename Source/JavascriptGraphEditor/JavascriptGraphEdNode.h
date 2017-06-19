@@ -2,6 +2,7 @@
 
 #include "JavascriptGraphEdGraph.h"
 #include "JavascriptGraphEditorLibrary.h"
+#include "EdGraph/EdGraphNode.h"
 #include "JavascriptGraphEdNode.generated.h"
 
 UCLASS(MinimalAPI)
@@ -27,6 +28,7 @@ public:
 
 	virtual FText GetDescription() const;	
 
+#if 1
 	UFUNCTION(BlueprintCallable, Category = "Scripting | Javascript")
 	FJavascriptEdGraphPin CreatePin(
 		EEdGraphPinDirection Dir,
@@ -39,6 +41,21 @@ public:
 		bool bIsConst /*= false*/
 		//int32 Index /*= INDEX_NONE*/
 		);
+#else
+	UFUNCTION(BlueprintCallable, Category = "Scripting | Javascript")
+	FJavascriptEdGraphPin CreatePin(
+		EEdGraphPinDirection Dir,
+		const FString& PinCategory,
+		const FString& PinSubCategory,
+		UObject* PinSubCategoryObject,
+		const FString& PinName,
+		EPinContainerType PinContainerType,
+		bool bIsReference,
+		bool bIsConst
+		//int32 Index /*= INDEX_NONE*/
+		);
+#endif
+
 public:
 	UPROPERTY()
 	bool Bidirectional;

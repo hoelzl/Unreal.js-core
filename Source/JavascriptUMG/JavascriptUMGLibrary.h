@@ -7,7 +7,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "JavascriptUMGLibrary.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptSlateStyle
 {
 	GENERATED_BODY()
@@ -15,7 +15,7 @@ struct FJavascriptSlateStyle
 	TSharedPtr<FSlateStyleSet> Handle;
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptSlateWidget
 {
 	GENERATED_BODY()

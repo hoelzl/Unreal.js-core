@@ -25,4 +25,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Widget")
 	void SetHighlightText(FText InHighlightText);
+
+protected:
+	PROPERTY_BINDING_IMPLEMENTATION(FText, HighlightText)
 };

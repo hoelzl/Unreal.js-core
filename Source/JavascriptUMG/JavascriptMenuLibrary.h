@@ -32,7 +32,7 @@ namespace EJavasrciptUserInterfaceActionType
 	};
 }
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptUICommandInfo
 {
 	GENERATED_BODY()
@@ -65,7 +65,7 @@ struct FJavascriptUICommand
 	FJavascriptUICommandInfo CommandInfo;
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptMenuBuilder
 {
 	GENERATED_BODY()
@@ -76,7 +76,7 @@ struct FJavascriptMenuBuilder
 	FToolBarBuilder* ToolBar = nullptr;
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptUICommandList
 {
 	GENERATED_BODY()
@@ -89,7 +89,7 @@ struct FJavascriptUICommandList
 	}
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptBindingContext
 {
 	GENERATED_BODY()
@@ -108,7 +108,7 @@ public:
 };
 
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct JAVASCRIPTUMG_API FJavascriptExtender
 {
 	GENERATED_BODY()
@@ -125,7 +125,7 @@ public:
 	TSharedPtr<FExtender> Handle;
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptExtensionBase
 {
 	GENERATED_BODY()

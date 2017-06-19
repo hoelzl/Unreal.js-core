@@ -6,7 +6,7 @@
 #include "JavascriptUMGLibrary.h"
 #include "JavascriptPropertyCustomizationLibrary.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptDetailWidgetDecl
 {
 	GENERATED_BODY()
@@ -26,7 +26,7 @@ struct FJavascriptDetailWidgetDecl
 #endif
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptPropertyHandle
 {
 	GENERATED_BODY()
@@ -41,7 +41,7 @@ struct FJavascriptPropertyHandle
 #endif
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptDetailWidgetRow
 {
 	GENERATED_BODY()
@@ -56,7 +56,7 @@ struct FJavascriptDetailWidgetRow
 #endif
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptDetailPropertyRow
 {
 	GENERATED_BODY()
@@ -71,7 +71,7 @@ struct FJavascriptDetailPropertyRow
 #endif
 };
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptDetailChildrenBuilder
 {
 	GENERATED_BODY()

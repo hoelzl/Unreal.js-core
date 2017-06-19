@@ -3,7 +3,7 @@
 #include "RawMesh.h"
 #include "JavascriptRawMeshLibrary.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FJavascriptRawMesh
 {
 	GENERATED_BODY()
