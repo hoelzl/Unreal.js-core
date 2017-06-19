@@ -1,4 +1,5 @@
 Binaries
 Intermediate
 ThirdParty/**/lib/*
+ThirdParty/v8/v8*-libs.zip
 
